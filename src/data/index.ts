@@ -5,6 +5,7 @@ import { unit1Quiz } from "./unit1";
 import { unit1Quiz2 } from "./unit1-quiz2";
 import { unit1Quiz3 } from "./unit1-quiz3";
 import { unit2Quiz } from "./unit2";
+import { unit2ScenarioQuiz } from "./unit2-scenarios";
 
 /**
  * Registry of all available quizzes.
@@ -15,6 +16,7 @@ export const quizzes: Quiz[] = [
   unit1Quiz2,
   unit1Quiz3,
   unit2Quiz,
+  unit2ScenarioQuiz,
   {
     id: "computer-networks-unit-1-scenarios-q1-q50",
     title: "Computer Networks: Scenario-Based MCQs Q1–Q50",
