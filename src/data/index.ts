@@ -1,0 +1,52 @@
+import type { Quiz } from "./types";
+import { scenarioQuestions } from "./scenario";
+import { scenarioQ1ToQ50 } from "./scenario-q1-q50";
+import { unit1Quiz } from "./unit1";
+import { unit1Quiz2 } from "./unit1-quiz2";
+
+/**
+ * Registry of all available quizzes.
+ * Add new quizzes here to make them appear on the home page.
+ */
+export const quizzes: Quiz[] = [
+  unit1Quiz,
+  unit1Quiz2,
+  {
+    id: "computer-networks-unit-1-scenarios-q1-q50",
+    title: "Computer Networks: Scenario-Based MCQs Q1–Q50",
+    subject: "Computer Networks",
+    unit: "Unit 1 · Scenarios Q1–Q50",
+    description:
+      "50 scenario-based questions on topologies, network types, devices, OSI layers, TCP/IP and troubleshooting with English + Hinglish explanations.",
+    topics: [
+      "Topologies",
+      "Network Types",
+      "Devices",
+      "OSI Model",
+      "TCP/IP",
+      "Network Concepts",
+    ],
+    questions: scenarioQ1ToQ50,
+  },
+  {
+    id: "computer-networks-unit-1-scenarios",
+    title: "Computer Networks: Scenario-Based MCQs",
+    subject: "Computer Networks",
+    unit: "Unit 1 · Scenarios",
+    description:
+      "50 scenario-based MCQs covering network types, topologies, devices, OSI layers and TCP/IP with English + Hinglish explanations.",
+    topics: [
+      "Network Types",
+      "Topologies",
+      "Devices",
+      "OSI Model",
+      "TCP/IP",
+      "Troubleshooting",
+    ],
+    questions: scenarioQuestions,
+  },
+];
+
+export function getQuizById(id: string): Quiz | undefined {
+  return quizzes.find((quiz) => quiz.id === id);
+}
