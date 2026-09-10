@@ -15,6 +15,7 @@ import { topologyQuiz } from "./topic4-topologies";
 import { hubQuiz } from "./topic5-network-hub";
 import { switchQuiz } from "./topic6-network-switch";
 import { routerQuiz } from "./topic7-network-router";
+import { errorDetectionQuiz } from "./topic8-error-detection";
 
 /**
  * Registry of all available quizzes.
@@ -35,6 +36,7 @@ export const quizzes: Quiz[] = [
   hubQuiz,
   switchQuiz,
   routerQuiz,
+  errorDetectionQuiz,
   {
     id: "computer-networks-unit-1-scenarios-q1-q50",
     title: "Computer Networks: Scenario-Based MCQs Q1–Q50",
