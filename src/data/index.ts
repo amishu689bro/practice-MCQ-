@@ -8,6 +8,13 @@ import { unit2Quiz } from "./unit2";
 import { unit2ScenarioQuiz } from "./unit2-scenarios";
 import { osiModelQuiz } from "./osi-model";
 import { tcpIpQuiz } from "./tcp-ip";
+import { introductionQuiz } from "./introduction";
+import { networkTypesQuiz } from "./topic2-networks-types";
+import { networkHardwareQuiz } from "./topic3-network-hardware";
+import { topologyQuiz } from "./topic4-topologies";
+import { hubQuiz } from "./topic5-network-hub";
+import { switchQuiz } from "./topic6-network-switch";
+import { routerQuiz } from "./topic7-network-router";
 
 /**
  * Registry of all available quizzes.
@@ -21,9 +28,17 @@ export const quizzes: Quiz[] = [
   unit2ScenarioQuiz,
   osiModelQuiz,
   tcpIpQuiz,
+  introductionQuiz,
+  networkTypesQuiz,
+  networkHardwareQuiz,
+  topologyQuiz,
+  hubQuiz,
+  switchQuiz,
+  routerQuiz,
   {
     id: "computer-networks-unit-1-scenarios-q1-q50",
     title: "Computer Networks: Scenario-Based MCQs Q1–Q50",
+    locked: true,
     subject: "Computer Networks",
     unit: "Unit 1 · Scenarios Q1–Q50",
     description:
@@ -41,6 +56,7 @@ export const quizzes: Quiz[] = [
   {
     id: "computer-networks-unit-1-scenarios",
     title: "Computer Networks: Scenario-Based MCQs",
+    locked: true,
     subject: "Computer Networks",
     unit: "Unit 1 · Scenarios",
     description:

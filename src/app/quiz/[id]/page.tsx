@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function QuizPage({ params }: Props) {
   const { id } = await params;
   const quiz = getQuizById(id);
-  if (!quiz) {
+  if (!quiz || quiz.locked) {
     notFound();
   }
 

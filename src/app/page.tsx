@@ -34,7 +34,7 @@ export default function Home() {
           {quizzes.map((quiz) => (
             <article
               key={quiz.id}
-              className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm transition hover:border-indigo-300 hover:shadow-md dark:border-zinc-700 dark:bg-zinc-950"
+              className={`rounded-3xl border p-6 shadow-sm transition dark:bg-zinc-950 ${quiz.locked ? "border-zinc-300 bg-zinc-100 opacity-80 dark:border-zinc-700 dark:bg-zinc-900" : "border-zinc-200 bg-white hover:border-indigo-300 hover:shadow-md dark:border-zinc-700"}`}
             >
               <div className="flex flex-wrap items-center gap-2">
                 <span className="rounded-full bg-indigo-100 px-3 py-1 text-sm font-bold text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">
@@ -61,12 +61,18 @@ export default function Home() {
                 ))}
               </ul>
               <div className="mt-5">
-                <Link
-                  href={`/quiz/${quiz.id}`}
-                  className="inline-flex w-full items-center justify-center rounded-full bg-indigo-600 px-6 py-3 font-semibold text-white transition hover:bg-indigo-700 sm:w-auto"
-                >
-                  Start Quiz →
-                </Link>
+                {quiz.locked ? (
+                  <span className="inline-flex w-full items-center justify-center rounded-full bg-zinc-300 px-6 py-3 font-semibold text-zinc-600 sm:w-auto dark:bg-zinc-700 dark:text-zinc-300">
+                    🔒 Locked
+                  </span>
+                ) : (
+                  <Link
+                    href={`/quiz/${quiz.id}`}
+                    className="inline-flex w-full items-center justify-center rounded-full bg-indigo-600 px-6 py-3 font-semibold text-white transition hover:bg-indigo-700 sm:w-auto"
+                  >
+                    Start Quiz →
+                  </Link>
+                )}
               </div>
             </article>
           ))}

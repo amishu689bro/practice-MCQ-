@@ -108,6 +108,7 @@ export const unit2ScenarioQuestions: QuizQuestion[] = [
 export const unit2ScenarioQuiz = {
   id: "computer-networks-unit-2-scenarios",
   title: "Computer Networks - Unit II Scenario-Based MCQs",
+  locked: true,
   subject: "Computer Networks",
   unit: "Unit II · Scenarios",
   description:

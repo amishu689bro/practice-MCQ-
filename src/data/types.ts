@@ -25,6 +25,7 @@ export interface QuizQuestion {
 export interface Quiz {
   id: string;
   title: string;
+  locked?: boolean;
   subject: string;
   unit: string;
   description: string;
