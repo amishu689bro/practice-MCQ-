@@ -111,7 +111,20 @@ function getServerSnapshot(): ProgressState {
 function setSnapshot(quizId: string, state: ProgressState): void {
   snapshots.set(quizId, state);
   saveState(quizId, state);
+  syncHook?.(quizId, state);
   listeners.forEach((listener) => listener());
+}
+
+/**
+ * Optional hook invoked after every local write. The Firebase auth provider
+ * registers a callback here to mirror progress changes to Firestore.
+ */
+let syncHook: ((quizId: string, state: ProgressState) => void) | null = null;
+
+export function setSyncHook(
+  hook: ((quizId: string, state: ProgressState) => void) | null,
+): void {
+  syncHook = hook;
 }
 
 /** Read the current progress for a quiz, synced with persisted storage. */
